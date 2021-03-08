@@ -66,10 +66,10 @@ async function start() {
     let t = content.match(/【签到概览】:((.|\n)*)【签到奖励】/)
     let res = t ? t[1].replace(/\n/,'') : '失败'
     let t2 = content.match(/【签到奖励】:((.|\n)*)【其他总计】/)
-    let res2 = t2 ? t2[1].replace(/\n/,'') : '唐恒祝'
+    let res2 = t2 ? t2[1].replace(/\n/,'') : '【今日】：0'
 
     
-    await sendNotify("" + ` ${res2} ` + ` ${res} ` + new Date().toLocaleDateString(), content);
+    await sendNotify("唐恒祝" + ` ${res2} ` + ` ${res} ` + new Date().toLocaleDateString(), content);
   }
 }
 
